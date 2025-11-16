@@ -17,7 +17,6 @@ final class PaymentController extends AbstractController
 {
     public function __construct(
         private PaymentRepository $paymentRepository,
-        private Security $security
         ){}
 
 

@@ -17,7 +17,6 @@ final class ServiceController extends AbstractController
 {
     public function __construct(
         private ServiceRepository $serviceRepository,
-        private Security $security
         ){}
 
 

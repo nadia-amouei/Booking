@@ -16,7 +16,6 @@ final class AppointmentController extends AbstractController
 {
     public function __construct(
         private AppointmentRepository $appointmentRepository,
-        private Security $security
         ){}
 
 
