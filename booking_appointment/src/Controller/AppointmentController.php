@@ -62,13 +62,13 @@ final class AppointmentController extends AbstractController
             'canceled'=> AppointmentStatus::CANCELED,
         ]));
 
-    $conflicts = $qb->getQuery()->getResult();
+        $conflicts = $qb->getQuery()->getResult();
 
-    if (count($conflicts) > 0) {
-        return new JsonResponse([
-            'error' => 'Time conflict: provider already has appointment in this time slot.'
-        ], 409);
-    }
+        if (count($conflicts) > 0) {
+            return new JsonResponse([
+                'error' => 'Time conflict: provider already has appointment in this time slot.'
+            ], 409);
+        }
 
         $appointment = new Appointment();
         $appointment->setCustomer($user);
@@ -79,6 +79,17 @@ final class AppointmentController extends AbstractController
 
         $em->persist($appointment);
         $em->flush();
+
+        // send notification
+        $message = [
+            'type' => 'appointment_created',
+            'appointmentId' => $appointment->getId(),
+            'customerEmail' => $appointment->getCustomer()->getEmail(),
+        ];
+
+        $producer = $this->container->get('enqueue.default_producer');
+        $producer->send('notifications', json_encode($message));
+        // end
 
         return new JsonResponse(['message' => 'Appointment created successfully'], 201);
     }

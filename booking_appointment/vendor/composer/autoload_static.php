@@ -15,6 +15,8 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
+        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'efb2d634b7fd658cd94fee9c19fd24ea' => __DIR__ . '/..' . '/api-platform/core/src/JsonLd/HydraContext.php',
@@ -22,6 +24,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpseclib3\\' => 11,
+        ),
         'S' => 
         array (
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
@@ -73,6 +79,11 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Doctrine\\' => 24,
         ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -82,6 +93,8 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
+            'PhpAmqpLib\\' => 11,
+            'ParagonIE\\ConstantTime\\' => 23,
         ),
         'N' => 
         array (
@@ -96,6 +109,20 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'Lexik\\Bundle\\JWTAuthenticationBundle\\' => 37,
             'Lcobucci\\JWT\\' => 13,
             'Lcobucci\\Clock\\' => 15,
+        ),
+        'I' => 
+        array (
+            'Interop\\Queue\\' => 14,
+            'Interop\\Amqp\\' => 13,
+        ),
+        'E' => 
+        array (
+            'Enqueue\\Null\\' => 13,
+            'Enqueue\\Dsn\\' => 12,
+            'Enqueue\\Bundle\\' => 15,
+            'Enqueue\\AmqpTools\\' => 18,
+            'Enqueue\\AmqpLib\\' => 16,
+            'Enqueue\\' => 8,
         ),
         'D' => 
         array (
@@ -114,6 +141,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'DeepCopy\\' => 9,
         ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
+        ),
         'A' => 
         array (
             'App\\Tests\\' => 10,
@@ -123,6 +154,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpseclib3\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/runtime/Internal',
@@ -315,6 +350,14 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
         ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -343,6 +386,14 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
         'Negotiation\\' => 
         array (
             0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
@@ -362,6 +413,38 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         'Lcobucci\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/clock/src',
+        ),
+        'Interop\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/queue-interop/src',
+        ),
+        'Interop\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/amqp-interop/src',
+        ),
+        'Enqueue\\Null\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/null',
+        ),
+        'Enqueue\\Dsn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/dsn',
+        ),
+        'Enqueue\\Bundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/enqueue-bundle',
+        ),
+        'Enqueue\\AmqpTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-tools',
+        ),
+        'Enqueue\\AmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-lib',
+        ),
+        'Enqueue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/enqueue',
         ),
         'Doctrine\\SqlFormatter\\' => 
         array (
@@ -418,6 +501,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
         'App\\Tests\\' => 
         array (

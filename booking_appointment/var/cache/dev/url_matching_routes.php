@@ -11,6 +11,7 @@ return [
         '/' => [
             [['_route' => 'appointments_add', '_controller' => 'App\\Controller\\AppointmentController::add'], null, ['POST' => 0], null, false, false, null],
             [['_route' => 'appointments_list', '_controller' => 'App\\Controller\\AppointmentController::list'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => 'payments_add', '_controller' => 'App\\Controller\\PaymentController::add'], null, ['POST' => 0], null, false, false, null],
         ],
         '/api/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\AuthController::register'], null, ['POST' => 0], null, false, false, null]],
         '/api/services' => [

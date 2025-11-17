@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">/var/www/html</parameter>
+    <parameter key="kernel.project_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,9 +9,9 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">/var/www/html/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">/var/www/html/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/var/www/html/var/log</parameter>
+    <parameter key="kernel.build_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -23,31 +23,31 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/doctrine/doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/symfony/maker-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/symfony/maker-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/symfony/security-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/symfony/security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="LexikJWTAuthenticationBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/lexik/jwt-authentication-bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/lexik/jwt-authentication-bundle</parameter>
         <parameter key="namespace">Lexik\Bundle\JWTAuthenticationBundle</parameter>
       </parameter>
       <parameter key="ApiPlatformBundle" type="collection">
-        <parameter key="path">/var/www/html/vendor/api-platform/core/src/Symfony/Bundle</parameter>
+        <parameter key="path">/Users/nadia/Documents/myProject/Booking/booking_appointment/vendor/api-platform/core/src/Symfony/Bundle</parameter>
         <parameter key="namespace">ApiPlatform\Symfony\Bundle</parameter>
       </parameter>
     </parameter>
@@ -83,17 +83,17 @@
     <parameter key="kernel.trusted_headers">%env(default::SYMFONY_TRUSTED_HEADERS)%</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/var/www/html/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">/var/www/html/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">/var/www/html/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
-    <parameter key="cache.prefix.seed">_/var/www/html.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_/Users/nadia/Documents/myProject/Booking/booking_appointment.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -103,7 +103,7 @@
     </parameter>
     <parameter key="session.save_path">null</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="validator.mapping.cache.file">/var/www/html/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
@@ -176,7 +176,7 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
     <parameter key="doctrine.orm.enable_native_lazy_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/var/www/html/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -303,8 +303,8 @@
       </parameter>
     </parameter>
     <parameter key="api_platform.resource_class_directories" type="collection">
-      <parameter>/var/www/html/src/ApiResource</parameter>
-      <parameter>/var/www/html/src/Entity</parameter>
+      <parameter>/Users/nadia/Documents/myProject/Booking/booking_appointment/src/ApiResource</parameter>
+      <parameter>/Users/nadia/Documents/myProject/Booking/booking_appointment/src/Entity</parameter>
     </parameter>
     <parameter key="api_platform.class_name_resources" type="collection">
       <parameter>ApiPlatform\State\ApiResource\Error</parameter>
@@ -378,6 +378,7 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\PaymentRepository"/>
+      <argument type="service" id="security.helper"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\PaymentController"/>
       </call>
@@ -417,6 +418,9 @@
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Enum\AppointmentStatus" class="App\Enum\AppointmentStatus" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's an enum"/>
+    </service>
+    <service id="App\Enum\PaymentStatus" class="App\Enum\PaymentStatus" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's an enum"/>
     </service>
     <service id="App\Enum\RoleEnum" class="App\Enum\RoleEnum" autowire="true" autoconfigure="true">
@@ -469,7 +473,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.i6hJTTj"/>
+      <argument type="service" id=".service_locator.rbKih2y"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -553,7 +557,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>/var/www/html/var/cache/dev/http_cache</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -563,7 +567,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/var/www/html/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -803,7 +807,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -839,7 +843,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1034,7 +1038,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1219,9 +1223,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>yU+7Ob58gJ</argument>
+      <argument>PcouFRWHyR</argument>
       <argument>0</argument>
-      <argument>/var/www/html/var/cache/dev/pools/app</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1234,40 +1238,40 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>XUZWh3oCfH</argument>
+      <argument>oTVYpBm-RJ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>-ZPlc8xhwu</argument>
+      <argument>X7r+LpjZxj</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>8vUMbijCz2</argument>
+      <argument>HkUiGYsG8S</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>vHyQ8yH4Hf</argument>
+      <argument>vi-WXY9M7j</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1277,7 +1281,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1296,7 +1300,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/var/www/html/var/cache/dev/pools/app</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1813,7 +1817,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.i6hJTTj"/>
+      <argument type="service" id=".service_locator.rbKih2y"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -1911,7 +1915,7 @@
       <argument type="service" id=".service_locator.RTjHFcp.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/var/www/html/var/cache/dev</argument>
+        <argument key="cache_dir">/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1949,7 +1953,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1976,7 +1980,7 @@
       <argument type="service" id="property_info.reflection_extractor" on-invalid="null"/>
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
-      <argument>/var/www/html/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
       <argument>APP_SECRET</argument>
     </service>
@@ -1989,11 +1993,12 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>/var/www/html/.env.%env(default:kernel.environment:APP_RUNTIME_ENV)%.local</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/.env.%env(default:kernel.environment:APP_RUNTIME_ENV)%.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer">
       <argument type="collection">
         <argument type="service" id="serializer.denormalizer.unwrapping"/>
+        <argument type="service" id="api_platform.serializer.uuid_denormalizer"/>
         <argument type="service" id="api_platform.openapi.normalizer.legacy"/>
         <argument type="service" id="api_platform.openapi.normalizer.legacy"/>
         <argument type="service" id="api_platform.normalizer.constraint_violation_list"/>
@@ -2149,10 +2154,10 @@
           </service>
         </argument>
       </argument>
-      <argument>/var/www/html/var/cache/dev/serialization.php</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>/var/www/html/var/cache/dev/serialization.php</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2337,7 +2342,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>/var/www/html/var/cache/dev/sessions</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2419,10 +2424,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>/var/www/html/var/cache/dev/validation.php</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>/var/www/html/var/cache/dev/validation.php</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -2699,10 +2704,10 @@
     <service id="cache.validator_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>lZuR8vP0Z4</argument>
+      <argument>Tebw58ElDU</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3130,7 +3135,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>/var/www/html/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3167,13 +3172,16 @@
           <argument key="Doctrine\DBAL\Platforms\PostgreSQLPlatform">4</argument>
         </argument>
       </call>
+      <call method="enableNativeLazyObjects">
+        <argument>false</argument>
+      </call>
       <call method="setRepositoryFactory">
         <argument type="service" id="doctrine.orm.container_repository_factory"/>
       </call>
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>/var/www/html/src/Entity</argument>
+        <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/src/Entity</argument>
       </argument>
       <argument>true</argument>
     </service>
@@ -3235,7 +3243,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>/var/www/html/migrations</argument>
+        <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -3420,7 +3428,7 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <argument>null</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
@@ -3598,7 +3606,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>/var/www/html</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -3763,10 +3771,10 @@
     <service id="cache.security_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>1syEEx1PF-</argument>
+      <argument>lYYQKPCH4Y</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3779,20 +3787,20 @@
     <service id="cache.security_is_granted_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>V28qWVnEQj</argument>
+      <argument>eO4rA8IGqY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_is_csrf_token_valid_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>kM+DLXn9AK</argument>
+      <argument>NcSoOYyavY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4860,10 +4868,10 @@
     <service id="api_platform.cache.route_name_resolver" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>XhK8wbNB7c</argument>
+      <argument>KCE8ZWj2HK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4929,6 +4937,13 @@
     <service id="api_platform.filter_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
+    </service>
+    <service id="api_platform.serializer.uuid_denormalizer" class="ApiPlatform\RamseyUuid\Serializer\UuidDenormalizer">
+      <tag name="serializer.normalizer"/>
+      <tag name="serializer.normalizer.default"/>
+    </service>
+    <service id="api_platform.ramsey_uuid.uri_variables.transformer.uuid" class="ApiPlatform\RamseyUuid\UriVariableTransformer\UuidUriVariableTransformer">
+      <tag name="api_platform.uri_variables.transformer" priority="-100"/>
     </service>
     <service id="api_platform.symfony.main_controller" class="ApiPlatform\Symfony\Controller\MainController" public="true">
       <argument type="service" id="api_platform.metadata.resource.metadata_collection_factory.cached"/>
@@ -5011,10 +5026,10 @@
     <service id="api_platform.cache.metadata.resource" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>O5e4RImFaB</argument>
+      <argument>0Jl60M1vBR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5096,10 +5111,10 @@
     <service id="api_platform.cache.metadata.property" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>cVlSrLntF+</argument>
+      <argument>6DWDqZ1GIP</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5183,10 +5198,10 @@
     <service id="api_platform.cache.metadata.resource_collection" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>DIb75dNJpP</argument>
+      <argument>LQ+xPXOL16</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5297,10 +5312,10 @@
     <service id="api_platform.cache.openapi" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>ZpXK72MQXV</argument>
+      <argument>EccTVdsnBg</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/var/www/html/var/cache/dev/pools/system</argument>
+      <argument>/Users/nadia/Documents/myProject/Booking/booking_appointment/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5815,6 +5830,8 @@
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.UnitEnum.0.App\Enum\AppointmentStatus" class="App\Enum\AppointmentStatus" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Enum\AppointmentStatus" class="App\Enum\AppointmentStatus" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.UnitEnum.0.App\Enum\PaymentStatus" class="App\Enum\PaymentStatus" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Enum\PaymentStatus" class="App\Enum\PaymentStatus" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.UnitEnum.0.App\Enum\RoleEnum" class="App\Enum\RoleEnum" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Enum\RoleEnum" class="App\Enum\RoleEnum" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.UnitEnum.0.App\Enum\ServiceStatus" class="App\Enum\ServiceStatus" autowire="true" abstract="true"/>
@@ -6592,6 +6609,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vmSR7bA" method="withContext"/>
     </service>
+    <service id=".service_locator.Kq27LHM.App\Controller\PaymentController::add()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PaymentController::add()"/>
+      <argument>App\Controller\PaymentController::add()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Kq27LHM" method="withContext"/>
+    </service>
     <service id=".service_locator.f00dxIK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6706,7 +6729,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkfvUVe" method="withContext"/>
     </service>
-    <service id=".service_locator.i6hJTTj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.rbKih2y" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -6718,6 +6741,7 @@
         <argument key="App\Controller\AppointmentController::update" type="service_closure" id=".service_locator.CW7CnPW.App\Controller\AppointmentController::update()"/>
         <argument key="App\Controller\AppointmentController::delete" type="service_closure" id=".service_locator.CW7CnPW.App\Controller\AppointmentController::delete()"/>
         <argument key="App\Controller\AuthController::register" type="service_closure" id=".service_locator.vmSR7bA.App\Controller\AuthController::register()"/>
+        <argument key="App\Controller\PaymentController::add" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\PaymentController::add()"/>
         <argument key="App\Controller\PaymentController::show" type="service_closure" id=".service_locator.f00dxIK.App\Controller\PaymentController::show()"/>
         <argument key="App\Controller\PaymentController::update" type="service_closure" id=".service_locator.Be4MbWA.App\Controller\PaymentController::update()"/>
         <argument key="App\Controller\PaymentController::delete" type="service_closure" id=".service_locator.Be4MbWA.App\Controller\PaymentController::delete()"/>
@@ -6735,6 +6759,7 @@
         <argument key="App\Controller\AppointmentController:update" type="service_closure" id=".service_locator.CW7CnPW.App\Controller\AppointmentController::update()"/>
         <argument key="App\Controller\AppointmentController:delete" type="service_closure" id=".service_locator.CW7CnPW.App\Controller\AppointmentController::delete()"/>
         <argument key="App\Controller\AuthController:register" type="service_closure" id=".service_locator.vmSR7bA.App\Controller\AuthController::register()"/>
+        <argument key="App\Controller\PaymentController:add" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\PaymentController::add()"/>
         <argument key="App\Controller\PaymentController:show" type="service_closure" id=".service_locator.f00dxIK.App\Controller\PaymentController::show()"/>
         <argument key="App\Controller\PaymentController:update" type="service_closure" id=".service_locator.Be4MbWA.App\Controller\PaymentController::update()"/>
         <argument key="App\Controller\PaymentController:delete" type="service_closure" id=".service_locator.Be4MbWA.App\Controller\PaymentController::delete()"/>
@@ -8266,7 +8291,7 @@
     <service id="ApiPlatform\Metadata\ResourceAccessCheckerInterface" alias="api_platform.security.resource_access_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.i6hJTTj"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.rbKih2y"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.9LJrHhf" alias="api_platform.serializer_locator"/>
