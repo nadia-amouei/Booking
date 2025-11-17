@@ -22,8 +22,8 @@ class Service
     #[ORM\Column]
     private ?int $duration_minutes = null;
 
-    #[ORM\ManyToOne(inversedBy: 'services')]
-    private ?User $provider_id = null;
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'services')]
+    private ?User $provider = null;
 
     /**
      * @var Collection<int, Appointment>
@@ -80,14 +80,14 @@ class Service
         return $this;
     }
 
-    public function getProviderId(): ?User
+    public function getProvider(): ?User
     {
-        return $this->provider_id;
+        return $this->provider;
     }
 
-    public function setProviderId(?User $provider_id): static
+    public function setProvider(?User $provider): static
     {
-        $this->provider_id = $provider_id;
+        $this->provider = $provider;
 
         return $this;
     }

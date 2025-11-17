@@ -17,13 +17,12 @@ class Appointment
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'appointments')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $customer_id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'appointments')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Service $service_id = null;
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'appointments')]
+    private ?User $customer = null;
+
+    #[ORM\ManyToOne(targetEntity: Service::class, inversedBy: 'appointments')]
+    private ?Service $service = null;
 
     #[ORM\Column(type:  'string' , enumType: AppointmentStatus::class)]
     private AppointmentStatus $status;
@@ -51,7 +50,7 @@ class Appointment
         $this->payments = new ArrayCollection();
 
         $this->created_at = new \DateTimeImmutable();
-        $this->updated_at = new \DateTime(); 
+        $this->updated_at = new \DateTime();
     }
 
     public function getId(): ?int
@@ -59,26 +58,26 @@ class Appointment
         return $this->id;
     }
 
-    public function getCustomerId(): ?User
+    public function getCustomer(): ?User
     {
-        return $this->customer_id;
+        return $this->customer;
     }
 
-    public function setCustomerId(?User $customer_id): static
+    public function setCustomer(?User $customer): static
     {
-        $this->customer_id = $customer_id;
+        $this->customer = $customer;
 
         return $this;
     }
 
-    public function getServiceId(): ?Service
+    public function getService(): ?Service
     {
-        return $this->service_id;
+        return $this->service;
     }
 
-    public function setServiceId(?Service $service_id): static
+    public function setService(?Service $service): static
     {
-        $this->service_id = $service_id;
+        $this->service = $service;
 
         return $this;
     }

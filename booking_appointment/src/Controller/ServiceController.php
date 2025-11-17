@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Service;
+use App\Entity\User;
 use App\Enum\RoleEnum;
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -15,10 +16,46 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/api/services')]
 final class ServiceController extends AbstractController
 {
-    public function __construct(
+    public function __construct (
         private ServiceRepository $serviceRepository,
+        private Security $security,
         ){}
 
+    #[Route('', name: 'service_add', methods: ['POST'])]
+    public function add(Request $request, EntityManagerInterface $em): JsonResponse
+    {
+        if (
+            !$this->isGranted(RoleEnum::ADMIN->value) &&
+            !$this->isGranted(RoleEnum::PROVIDER->value)
+        ) {
+            return $this->json(['error' => 'Access denied'], 403);
+        }
+
+        /** @var \App\Entity\User $user **/
+        $user = $this->security->getUser();
+
+        if (!$user) {
+            return new JsonResponse(['error' => 'Unauthorized'], 401);
+        }
+
+
+        $data = json_decode($request->getContent(), true);
+
+        if (!isset($data['name'], $data['duration_minutes'], $data['price'])) {
+            return new JsonResponse(['error' => 'Invalid body'], 400);
+        }
+
+        $service = new Service();
+        $service->setName($data['name']);
+        $service->setDurationInMinutes($data['duration_minutes']);
+        $service->setPrice($data['price']);
+        $service->setProviderId($user->getId());
+
+        $em->persist($service);
+        $em->flush();
+
+        return new JsonResponse(['message' => 'Service created successfully'], 201);
+    }
 
     #[Route('', name: 'services_list', methods: ['GET'])]
     public function list(): JsonResponse

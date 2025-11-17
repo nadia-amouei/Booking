@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Appointment;
+use App\Entity\Service;
+use App\Enum\AppointmentStatus;
 use App\Enum\RoleEnum;
 use App\Repository\AppointmentRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -16,8 +18,69 @@ final class AppointmentController extends AbstractController
 {
     public function __construct(
         private AppointmentRepository $appointmentRepository,
+        private Security $security
         ){}
 
+    #[Route('', name: 'appointments_add', methods: ['POST'])]
+    public function add(Request $request, EntityManagerInterface $em): JsonResponse
+    {
+        /** @var \App\Entity\User */
+        $user = $this->security->getUser();
+        if (!$user) {
+            return new JsonResponse(['error' => 'Unauthorized'], 401);
+        }
+
+        $data = json_decode($request->getContent(), true);
+
+        if (!isset($data['service_id'], $data['start_at'])) {
+            return new JsonResponse(['error' => 'Invalid body'], 400);
+        }
+
+        $service = $em->getRepository(Service::class)->find($data['service_id']);
+        if (!$service) {
+            return new JsonResponse(['error' => 'Service not found'], 404);
+        }
+
+        $startAt = new \DateTime($data['start_at']);
+        $endAt = (clone $startAt)->modify("+{$service->getDurationInMinutes()} minutes");
+
+        // check conflict
+        $provider = $service->getProvider();
+
+        $qb = $em->createQueryBuilder();
+        $qb->select('a')
+        ->from(Appointment::class, 'a')
+        ->join('a.service', 's')
+        ->where('s.provider = :provider')
+        ->andWhere('a.status != :canceled')
+        ->andWhere('(a.startAt < :endAt AND a.endAt > :startAt)')
+        ->setParameters([
+            'provider'=> $provider,
+            'startAt'=> $startAt,
+            'endAt'=> $endAt,
+            'canceled'=> AppointmentStatus::CANCELED,
+        ]);
+
+    $conflicts = $qb->getQuery()->getResult();
+
+    if (count($conflicts) > 0) {
+        return new JsonResponse([
+            'error' => 'Time conflict: provider already has appointment in this time slot.'
+        ], 409);
+    }
+
+        $appointment = new Appointment();
+        $appointment->setCustomerId($user->getId());
+        $appointment->setServiceId($service->getId());
+        $appointment->setStartAt($startAt);
+        $appointment->setEndAt($endAt);
+        $appointment->setStatus(AppointmentStatus::PENDING );
+
+        $em->persist($appointment);
+        $em->flush();
+
+        return new JsonResponse(['message' => 'Appointment created successfully'], 201);
+    }
 
     #[Route('', name: 'appointments_list', methods: ['GET'])]
     public function list(): JsonResponse

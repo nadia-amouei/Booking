@@ -13,11 +13,11 @@ class Payment
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'payments')]
-    private ?Appointment $appointment_id = null;
+    #[ORM\ManyToOne(targetEntity: Appointment::class, inversedBy: 'payments')]
+    private ?Appointment $appointment = null;
 
-    #[ORM\ManyToOne(inversedBy: 'payments')]
-    private ?User $customer_id = null;
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'payments')]
+    private ?User $customer = null;
 
     #[ORM\Column(length: 255)]
     private ?string $status = null;
@@ -39,26 +39,26 @@ class Payment
         return $this->id;
     }
 
-    public function getAppointmentId(): ?Appointment
+    public function getAppointment(): ?Appointment
     {
-        return $this->appointment_id;
+        return $this->appointment;
     }
 
-    public function setAppointmentId(?Appointment $appointment_id): static
+    public function setAppointment(?Appointment $appointment): static
     {
-        $this->appointment_id = $appointment_id;
+        $this->appointment = $appointment;
 
         return $this;
     }
 
-    public function getCustomerId(): ?User
+    public function getCustomer(): ?User
     {
-        return $this->customer_id;
+        return $this->customer;
     }
 
-    public function setCustomerId(?User $customer_id): static
+    public function setCustomerId(?User $customer): static
     {
-        $this->customer_id = $customer_id;
+        $this->customer = $customer;
 
         return $this;
     }
