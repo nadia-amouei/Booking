@@ -56,7 +56,7 @@ class Payment
         return $this->customer;
     }
 
-    public function setCustomerId(?User $customer): static
+    public function setCustomer(?User $customer): static
     {
         $this->customer = $customer;
 

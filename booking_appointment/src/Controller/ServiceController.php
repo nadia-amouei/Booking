@@ -49,7 +49,7 @@ final class ServiceController extends AbstractController
         $service->setName($data['name']);
         $service->setDurationInMinutes($data['duration_minutes']);
         $service->setPrice($data['price']);
-        $service->setProviderId($user->getId());
+        $service->setProvider($user);
 
         $em->persist($service);
         $em->flush();
@@ -66,7 +66,7 @@ final class ServiceController extends AbstractController
 
         $data = array_map(fn(Service $service) => [
             'id' => $service->getId(),
-            'provider_id' => $service->getProviderId(),
+            'provider_id' => $service->getProvider(),
             'name' => $service->getName(),
             'duration_minutes' => $service->getDurationInMinutes(),
             'status' => $service->getStatus(),
@@ -91,7 +91,7 @@ final class ServiceController extends AbstractController
 
         return $this->json([
             'id' => $service->getId(),
-            'provider_id' => $service->getProviderId(),
+            'provider_id' => $service->getProvider(),
             'name' => $service->getName(),
             'duration_minutes' => $service->getDurationInMinutes(),
             'status' => $service->getStatus(),
@@ -140,7 +140,7 @@ final class ServiceController extends AbstractController
 
         return $this->json([
             'id' => $service->getId(),
-            'provider_id' => $service->getProviderId(),
+            'provider_id' => $service->getProvider(),
             'name' => $service->getName(),
             'duration_minutes' => $service->getDurationInMinutes(),
             'status' => $service->getStatus(),

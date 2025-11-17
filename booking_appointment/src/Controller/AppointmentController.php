@@ -7,6 +7,7 @@ use App\Entity\Service;
 use App\Enum\AppointmentStatus;
 use App\Enum\RoleEnum;
 use App\Repository\AppointmentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -54,12 +55,12 @@ final class AppointmentController extends AbstractController
         ->where('s.provider = :provider')
         ->andWhere('a.status != :canceled')
         ->andWhere('(a.startAt < :endAt AND a.endAt > :startAt)')
-        ->setParameters([
+        ->setParameters(new ArrayCollection([
             'provider'=> $provider,
             'startAt'=> $startAt,
             'endAt'=> $endAt,
             'canceled'=> AppointmentStatus::CANCELED,
-        ]);
+        ]));
 
     $conflicts = $qb->getQuery()->getResult();
 
@@ -70,8 +71,8 @@ final class AppointmentController extends AbstractController
     }
 
         $appointment = new Appointment();
-        $appointment->setCustomerId($user->getId());
-        $appointment->setServiceId($service->getId());
+        $appointment->setCustomer($user);
+        $appointment->setService($service);
         $appointment->setStartAt($startAt);
         $appointment->setEndAt($endAt);
         $appointment->setStatus(AppointmentStatus::PENDING );

@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Appointment;
 use App\Entity\Payment;
+use App\Entity\User;
+use App\Enum\PaymentStatus;
 use App\Enum\RoleEnum;
 use App\Repository\PaymentRepository;
-use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -16,7 +18,8 @@ use Symfony\Component\Routing\Attribute\Route;
 final class PaymentController extends AbstractController
 {
     public function __construct(
-        private PaymentRepository $paymentRepository,
+            private PaymentRepository $paymentRepository,
+            private Security $security
         ){}
 
 
@@ -37,6 +40,42 @@ final class PaymentController extends AbstractController
 
         return $this->json($data);
 
+    }
+
+    #[Route('', name: 'payments_add', methods: ['POST'])]
+    public function add(Request $request, EntityManagerInterface $em): JsonResponse
+    {
+        /** @var \App\Entity\User */
+        $user = $this->security->getUser();
+        if (!$user) {
+            return new JsonResponse(['error' => 'Unauthorized'], 401);
+        }
+
+        $data = json_decode($request->getContent(), true);
+
+        if (!isset($data['appointment_id'], $data['customer_id'])) {
+            return new JsonResponse(['error' => 'Invalid body'], 400);
+        }
+
+        $appointment = $em->getRepository(Appointment::class)->find($data['appointment_id']);
+        if (!$appointment) {
+            return new JsonResponse(['error' => 'Appointment not found'], 404);
+        }
+        $customer = $em->getRepository(User::class)->find($data['customer_id']);
+        if (!$customer) {
+            return new JsonResponse(['error' => 'Customer not found'], 404);
+        }
+
+
+        $payment = new Payment();
+        $payment->setCustomer($customer);
+        $payment->setAppointment($appointment);
+        $payment->setStatus(PaymentStatus::PENDING->value);
+
+        $em->persist($payment);
+        $em->flush();
+
+        return new JsonResponse(['message' => 'Appointment created successfully'], 201);
     }
 
     #[Route('/{id}', name: 'services_show', methods: ['GET'])]
@@ -83,14 +122,7 @@ final class PaymentController extends AbstractController
 
 
         return $this->json([
-            'id' => $service->getId(),
-            'provider_id' => $service->getProviderId(),
-            'name' => $service->getName(),
-            'duration_minutes' => $service->getDurationInMinutes(),
-            'status' => $service->getStatus(),
-            'price' => $service->getPrice(),
-            'created_at' => $service->getCreatedAt(),
-            'updated_at' => $service->getUpdatedAt()
+            'id' => $payment->getId(),
         ]);
 
     }
