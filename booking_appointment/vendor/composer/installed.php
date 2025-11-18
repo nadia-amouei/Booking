@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '34707152bff1a0e30e3aced4d29cd52d1d4d2547',
+        'reference' => 'eaf16c4319c22b0a322457032a96ff001e8a6af0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '34707152bff1a0e30e3aced4d29cd52d1d4d2547',
+            'reference' => 'eaf16c4319c22b0a322457032a96ff001e8a6af0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -280,6 +280,12 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'emag-tech-labs/rabbitmq-bundle' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '2.17.4',
+            ),
+        ),
         'enqueue/amqp-lib' => array(
             'pretty_version' => '0.10.26',
             'version' => '0.10.26.0',
@@ -388,6 +394,12 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'oldsound/rabbitmq-bundle' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '2.17.4',
+            ),
+        ),
         'paragonie/constant_time_encoding' => array(
             'pretty_version' => 'v3.1.3',
             'version' => '3.1.3.0',
@@ -430,6 +442,15 @@
             'reference' => '9f50fe69a9f1a19e2cb25596a354d705de36fe59',
             'type' => 'library',
             'install_path' => __DIR__ . '/../php-amqplib/php-amqplib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'php-amqplib/rabbitmq-bundle' => array(
+            'pretty_version' => '2.17.4',
+            'version' => '2.17.4.0',
+            'reference' => '84f6c284daddd350b1b9ba3a4efabcb7c9c03479',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../php-amqplib/rabbitmq-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -969,6 +990,15 @@
             'install_path' => __DIR__ . '/../symfony/maker-bundle',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'symfony/messenger' => array(
+            'pretty_version' => 'v7.3.6',
+            'version' => '7.3.6.0',
+            'reference' => '58a7efa3bebadbe4cdd8f7577c5856f0e3ea3978',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/messenger',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/password-hasher' => array(
             'pretty_version' => 'v7.3.0',

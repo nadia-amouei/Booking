@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Enum\AppointmentStatus;
+use App\Enum\ServiceStatus;
 use App\Repository\ServiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -32,7 +33,7 @@ class Service
     private Collection $appointments;
 
     #[ORM\Column(length: 255)]
-    private AppointmentStatus $status;
+    private ServiceStatus $status;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
@@ -122,12 +123,12 @@ class Service
         return $this;
     }
 
-    public function getStatus(): AppointmentStatus
+    public function getStatus(): ServiceStatus
     {
         return $this->status;
     }
 
-    public function setStatus(AppointmentStatus $status): static
+    public function setStatus(ServiceStatus $status): static
     {
         $this->status = $status;
 

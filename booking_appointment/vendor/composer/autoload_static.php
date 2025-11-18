@@ -16,8 +16,8 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'efb2d634b7fd658cd94fee9c19fd24ea' => __DIR__ . '/..' . '/api-platform/core/src/JsonLd/HydraContext.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -59,6 +59,7 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\PasswordHasher\\' => 33,
+            'Symfony\\Component\\Messenger\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
@@ -95,6 +96,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
             'PhpParser\\' => 10,
             'PhpAmqpLib\\' => 11,
             'ParagonIE\\ConstantTime\\' => 23,
+        ),
+        'O' => 
+        array (
+            'OldSound\\RabbitMqBundle\\' => 24,
         ),
         'N' => 
         array (
@@ -274,6 +279,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         array (
             0 => __DIR__ . '/..' . '/symfony/password-hasher',
         ),
+        'Symfony\\Component\\Messenger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/messenger',
+        ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-kernel',
@@ -393,6 +402,10 @@ class ComposerStaticInitaf3a971b86a4585c7c3bf9fe517e48ae
         'ParagonIE\\ConstantTime\\' => 
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
+        'OldSound\\RabbitMqBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/rabbitmq-bundle',
         ),
         'Negotiation\\' => 
         array (

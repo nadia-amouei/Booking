@@ -123,7 +123,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->services->contains($service)) {
             $this->services->add($service);
-            $service->setProviderId($this);
+            $service->setProvider($this);
         }
 
         return $this;
@@ -133,8 +133,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->services->removeElement($service)) {
             // set the owning side to null (unless already changed)
-            if ($service->getProviderId() === $this) {
-                $service->setProviderId(null);
+            if ($service->getProvider() === $this) {
+                $service->setProvider(null);
             }
         }
 
@@ -153,7 +153,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->service_id->contains($serviceId)) {
             $this->service_id->add($serviceId);
-            $serviceId->setCustomerId($this);
+            $serviceId->setCustomer($this);
         }
 
         return $this;
@@ -163,8 +163,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->service_id->removeElement($serviceId)) {
             // set the owning side to null (unless already changed)
-            if ($serviceId->getCustomerId() === $this) {
-                $serviceId->setCustomerId(null);
+            if ($serviceId->getCustomer() === $this) {
+                $serviceId->setCustomer(null);
             }
         }
 
@@ -183,7 +183,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->appointments->contains($appointment)) {
             $this->appointments->add($appointment);
-            $appointment->setCustomerId($this);
+            $appointment->setCustomer($this);
         }
 
         return $this;
@@ -193,8 +193,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->appointments->removeElement($appointment)) {
             // set the owning side to null (unless already changed)
-            if ($appointment->getCustomerId() === $this) {
-                $appointment->setCustomerId(null);
+            if ($appointment->getCustomer() === $this) {
+                $appointment->setCustomer(null);
             }
         }
 
@@ -213,7 +213,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->payments->contains($payment)) {
             $this->payments->add($payment);
-            $payment->setCustomerId($this);
+            $payment->setCustomer($this);
         }
 
         return $this;
@@ -223,8 +223,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->payments->removeElement($payment)) {
             // set the owning side to null (unless already changed)
-            if ($payment->getCustomerId() === $this) {
-                $payment->setCustomerId(null);
+            if ($payment->getCustomer() === $this) {
+                $payment->setCustomer(null);
             }
         }
 

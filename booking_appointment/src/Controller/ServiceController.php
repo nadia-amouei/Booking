@@ -2,16 +2,16 @@
 
 namespace App\Controller;
 
-use App\Entity\Service;
-use App\Entity\User;
 use App\Enum\RoleEnum;
+use App\Entity\Service;
+use App\Enum\ServiceStatus;
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
-use Symfony\Component\BrowserKit\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/api/services')]
 final class ServiceController extends AbstractController
@@ -24,6 +24,7 @@ final class ServiceController extends AbstractController
     #[Route('', name: 'service_add', methods: ['POST'])]
     public function add(Request $request, EntityManagerInterface $em): JsonResponse
     {
+
         if (
             !$this->isGranted(RoleEnum::ADMIN->value) &&
             !$this->isGranted(RoleEnum::PROVIDER->value)
@@ -49,6 +50,7 @@ final class ServiceController extends AbstractController
         $service->setName($data['name']);
         $service->setDurationInMinutes($data['duration_minutes']);
         $service->setPrice($data['price']);
+        $service->setStatus(ServiceStatus::ACTIVE );
         $service->setProvider($user);
 
         $em->persist($service);

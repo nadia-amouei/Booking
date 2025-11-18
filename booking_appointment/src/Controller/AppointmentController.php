@@ -6,24 +6,30 @@ use App\Entity\Appointment;
 use App\Entity\Service;
 use App\Enum\AppointmentStatus;
 use App\Enum\RoleEnum;
+use App\Message\NotificationMessage;
 use App\Repository\AppointmentRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/api/appointments')]
 final class AppointmentController extends AbstractController
 {
     public function __construct(
         private AppointmentRepository $appointmentRepository,
-        private Security $security
+        private Security $security,
         ){}
 
     #[Route('', name: 'appointments_add', methods: ['POST'])]
-    public function add(Request $request, EntityManagerInterface $em): JsonResponse
+    public function add(
+        Request $request,
+        EntityManagerInterface $em,
+        MessageBusInterface $bus
+        ): JsonResponse
     {
         /** @var \App\Entity\User */
         $user = $this->security->getUser();
@@ -42,33 +48,12 @@ final class AppointmentController extends AbstractController
             return new JsonResponse(['error' => 'Service not found'], 404);
         }
 
-        $startAt = new \DateTime($data['start_at']);
-        $endAt = (clone $startAt)->modify("+{$service->getDurationInMinutes()} minutes");
+        $startAt = \DateTime::createFromFormat('H:i:s', $data['start_at']);
+        $endAt = clone $startAt;
+        $endAt->modify('+' . $service->getDurationInMinutes() . ' minutes');
 
-        // check conflict
-        $provider = $service->getProvider();
+        //TODO add query for uniq time appointment
 
-        $qb = $em->createQueryBuilder();
-        $qb->select('a')
-        ->from(Appointment::class, 'a')
-        ->join('a.service', 's')
-        ->where('s.provider = :provider')
-        ->andWhere('a.status != :canceled')
-        ->andWhere('(a.startAt < :endAt AND a.endAt > :startAt)')
-        ->setParameters(new ArrayCollection([
-            'provider'=> $provider,
-            'startAt'=> $startAt,
-            'endAt'=> $endAt,
-            'canceled'=> AppointmentStatus::CANCELED,
-        ]));
-
-        $conflicts = $qb->getQuery()->getResult();
-
-        if (count($conflicts) > 0) {
-            return new JsonResponse([
-                'error' => 'Time conflict: provider already has appointment in this time slot.'
-            ], 409);
-        }
 
         $appointment = new Appointment();
         $appointment->setCustomer($user);
@@ -81,14 +66,7 @@ final class AppointmentController extends AbstractController
         $em->flush();
 
         // send notification
-        $message = [
-            'type' => 'appointment_created',
-            'appointmentId' => $appointment->getId(),
-            'customerEmail' => $appointment->getCustomer()->getEmail(),
-        ];
 
-        $producer = $this->container->get('enqueue.default_producer');
-        $producer->send('notifications', json_encode($message));
         // end
 
         return new JsonResponse(['message' => 'Appointment created successfully'], 201);

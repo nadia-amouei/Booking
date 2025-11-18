@@ -79,6 +79,15 @@
             "config/packages/lexik_jwt_authentication.yaml"
         ]
     },
+    "php-amqplib/rabbitmq-bundle": {
+        "version": "2.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.12",
+            "ref": "ce3ca2e4577270c4f518539aa6b9e878998fcfef"
+        }
+    },
     "phpunit/phpunit": {
         "version": "12.4",
         "recipe": {
@@ -147,6 +156,18 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
+    },
+    "symfony/messenger": {
+        "version": "7.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.0",
+            "ref": "d8936e2e2230637ef97e5eecc0eea074eecae58b"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
     },
     "symfony/property-info": {
         "version": "7.3",

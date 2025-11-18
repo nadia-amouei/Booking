@@ -8,12 +8,12 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/' => [
+        '/api/appointments' => [
             [['_route' => 'appointments_add', '_controller' => 'App\\Controller\\AppointmentController::add'], null, ['POST' => 0], null, false, false, null],
             [['_route' => 'appointments_list', '_controller' => 'App\\Controller\\AppointmentController::list'], null, ['GET' => 0], null, false, false, null],
-            [['_route' => 'payments_add', '_controller' => 'App\\Controller\\PaymentController::add'], null, ['POST' => 0], null, false, false, null],
         ],
         '/api/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\AuthController::register'], null, ['POST' => 0], null, false, false, null]],
+        '/' => [[['_route' => 'payments_add', '_controller' => 'App\\Controller\\PaymentController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/services' => [
             [['_route' => 'service_add', '_controller' => 'App\\Controller\\ServiceController::add'], null, ['POST' => 0], null, false, false, null],
             [['_route' => 'services_list', '_controller' => 'App\\Controller\\ServiceController::list'], null, ['GET' => 0], null, false, false, null],
@@ -36,21 +36,18 @@ return [
                         .'|validation_errors/([^/]++)(?'
                             .'|(*:257)'
                         .')'
+                        .'|appointments/([^/]++)(?'
+                            .'|(*:290)'
+                        .')'
+                        .'|services/([^/]++)(?'
+                            .'|(*:319)'
+                        .')'
+                        .'|users/([^/]++)(?'
+                            .'|(*:345)'
+                        .')'
                     .')'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:296)'
-                .'|/([^/]++)(?'
-                    .'|(*:316)'
-                .')'
-                .'|/test(*:330)'
-                .'|/api/(?'
-                    .'|services/([^/]++)(?'
-                        .'|(*:366)'
-                    .')'
-                    .'|users/([^/]++)(?'
-                        .'|(*:392)'
-                    .')'
-                .')'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:384)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -66,22 +63,23 @@ return [
             [['_route' => '_api_validation_errors_jsonapi', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_jsonapi', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_xml', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_xml', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
         ],
-        296 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        316 => [
+        290 => [
             [['_route' => 'appointments_show', '_controller' => 'App\\Controller\\AppointmentController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'appointments_update', '_controller' => 'App\\Controller\\AppointmentController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'appointments_delete', '_controller' => 'App\\Controller\\AppointmentController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        330 => [[['_route' => 'test', '_controller' => 'App\\Controller\\AuthController::test'], [], ['GET' => 0], null, false, false, null]],
-        366 => [
+        319 => [
             [['_route' => 'services_show', '_controller' => 'App\\Controller\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'services_update', '_controller' => 'App\\Controller\\ServiceController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'services_delete', '_controller' => 'App\\Controller\\ServiceController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        392 => [
+        345 => [
             [['_route' => 'users_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'users_update', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'users_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        ],
+        384 => [
+            [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

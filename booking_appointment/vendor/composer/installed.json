@@ -2667,6 +2667,88 @@
             "install-path": "../php-amqplib/php-amqplib"
         },
         {
+            "name": "php-amqplib/rabbitmq-bundle",
+            "version": "2.17.4",
+            "version_normalized": "2.17.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-amqplib/RabbitMqBundle.git",
+                "reference": "84f6c284daddd350b1b9ba3a4efabcb7c9c03479"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-amqplib/RabbitMqBundle/zipball/84f6c284daddd350b1b9ba3a4efabcb7c9c03479",
+                "reference": "84f6c284daddd350b1b9ba3a4efabcb7c9c03479",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "php-amqplib/php-amqplib": "^2.12.2|^3.0",
+                "psr/log": "^1.0 || ^2.0 || ^3.0",
+                "symfony/config": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/console": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/dependency-injection": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/event-dispatcher": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/framework-bundle": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/http-kernel": "^4.4|^5.3|^6.0|^7.0",
+                "symfony/yaml": "^4.4|^5.3|^6.0|^7.0"
+            },
+            "replace": {
+                "emag-tech-labs/rabbitmq-bundle": "self.version",
+                "oldsound/rabbitmq-bundle": "self.version"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.2",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/serializer": "^4.4|^5.3|^6.0|^7.0"
+            },
+            "suggest": {
+                "ext-pcntl": "*",
+                "symfony/framework-bundle": "To use this lib as a full Symfony Bundle and to use the profiler data collector"
+            },
+            "time": "2025-08-03T22:35:15+00:00",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "OldSound\\RabbitMqBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alvaro Videla"
+                }
+            ],
+            "description": "Integrates php-amqplib with Symfony & RabbitMq. Formerly emag-tech-labs/rabbitmq-bundle, oldsound/rabbitmq-bundle.",
+            "keywords": [
+                "AMQP",
+                "message",
+                "queue",
+                "rabbitmq",
+                "symfony",
+                "symfony4",
+                "symfony5"
+            ],
+            "support": {
+                "issues": "https://github.com/php-amqplib/RabbitMqBundle/issues",
+                "source": "https://github.com/php-amqplib/RabbitMqBundle/tree/2.17.4"
+            },
+            "install-path": "../php-amqplib/rabbitmq-bundle"
+        },
+        {
             "name": "phpseclib/phpseclib",
             "version": "3.0.47",
             "version_normalized": "3.0.47.0",
@@ -6762,6 +6844,102 @@
                 }
             ],
             "install-path": "../symfony/maker-bundle"
+        },
+        {
+            "name": "symfony/messenger",
+            "version": "v7.3.6",
+            "version_normalized": "7.3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/messenger.git",
+                "reference": "58a7efa3bebadbe4cdd8f7577c5856f0e3ea3978"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/58a7efa3bebadbe4cdd8f7577c5856f0e3ea3978",
+                "reference": "58a7efa3bebadbe4cdd8f7577c5856f0e3ea3978",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/log": "^1|^2|^3",
+                "symfony/clock": "^6.4|^7.0",
+                "symfony/deprecation-contracts": "^2.5|^3"
+            },
+            "conflict": {
+                "symfony/console": "<7.2",
+                "symfony/event-dispatcher": "<6.4",
+                "symfony/event-dispatcher-contracts": "<2.5",
+                "symfony/framework-bundle": "<6.4",
+                "symfony/http-kernel": "<6.4",
+                "symfony/lock": "<6.4",
+                "symfony/serializer": "<6.4"
+            },
+            "require-dev": {
+                "psr/cache": "^1.0|^2.0|^3.0",
+                "symfony/console": "^7.2",
+                "symfony/dependency-injection": "^6.4|^7.0",
+                "symfony/event-dispatcher": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/lock": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0",
+                "symfony/property-access": "^6.4|^7.0",
+                "symfony/rate-limiter": "^6.4|^7.0",
+                "symfony/routing": "^6.4|^7.0",
+                "symfony/serializer": "^6.4|^7.0",
+                "symfony/service-contracts": "^2.5|^3",
+                "symfony/stopwatch": "^6.4|^7.0",
+                "symfony/validator": "^6.4|^7.0"
+            },
+            "time": "2025-11-06T11:17:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Messenger\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Roze",
+                    "email": "samuel.roze@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Helps applications send and receive messages to/from other applications or via message queues",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/messenger/tree/v7.3.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/messenger"
         },
         {
             "name": "symfony/password-hasher",
